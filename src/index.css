@@ -6,26 +6,26 @@
   @font-face {
     font-family: "Onest";
     font-weight: 400;
-    src: url("./src/fonts/Onest/static/Onest-Regular.ttf") format("truetype");
+    src: url("/public/fonts/Onest/static/Onest-Regular.ttf") format("truetype");
   }
 
   @font-face {
     font-family: "Onest";
     font-weight: 300;
-    src: url("./src/fonts/Onest/static/Onest-Light.ttf") format("truetype");
+    src: url("/public/fonts/Onest/static/Onest-Light.ttf") format("truetype");
   }
 
   @font-face {
     font-family: "Cormorant Garamond";
     font-weight: 400;
-    src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf")
+    src: url("/public/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf")
       format("truetype");
   }
 
   @font-face {
     font-family: "Cormorant Garamond";
     font-weight: 300;
-    src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf")
+    src: url("/public/fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf")
       format("truetype");
   }
 }
