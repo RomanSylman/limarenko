@@ -3,10 +3,10 @@ import { useState } from "react";
 
 const ProductPage: React.FC = () => {
   const images = [
-    "/public/assets/main1.png",
-    "/public/assets/main2.png",
-    "/public/assets/main3.png",
-    "/public/assets/main4.png",
+    "/assets/main1.png",
+    "/assets/main2.png",
+    "/assets/main3.png",
+    "/assets/main4.png",
   ];
 
   const firstGroup = images.slice(0, 2);
@@ -14,17 +14,17 @@ const ProductPage: React.FC = () => {
 
   const addProduct = [
     {
-      src: "/public/assets/add1.png",
+      src: "/assets/add1.png",
       name: "Рукавички короткі",
       price: "1000",
     },
     {
-      src: "/public/assets/add2.png",
+      src: "/assets/add2.png",
       name: "Рукавички довгі",
       price: "1000",
     },
     {
-      src: "/public/assets/add3.png",
+      src: "/assets/add3.png",
       name: "Кроп-жилет",
       price: "1000",
     },
