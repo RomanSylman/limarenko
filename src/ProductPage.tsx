@@ -37,15 +37,19 @@ const ProductPage: React.FC = () => {
 
   return (
     <>
-      <header className="flex justify-between px-[10px] lg:px-[30px] py-[8px] lg:py-[0px] items-center">
+      <header className="flex justify-between px-[10px] lg:px-[30px] py-[8px] lg:py-[0px] items-center xl:mt-3 xl:mx-5">
         {" "}
         {/* header section */}
-        <button className="flex flex-col gap-[5px] basis-1/3 lg:hidden"> {/* hamburger menu */}
+        <button className="flex flex-col gap-[5px] basis-1/3 lg:hidden">
+          {" "}
+          {/* hamburger menu */}
           <div className="h-[1px] w-[15px] bg-black"></div>
           <div className="h-[1px] w-[15px] bg-black"></div>
           <div className="h-[1px] w-[15px] bg-black"></div>
         </button>
-        <nav className="hidden lg:block "> {/* navigation menu */}
+        <nav className="hidden lg:block ">
+          {" "}
+          {/* navigation menu */}
           <ul className="flex gap-[40px] font-onest font-normal text-[14px]">
             {["Головна", "Магазин", "Колекції"].map((item, idx) => (
               <li
@@ -57,7 +61,7 @@ const ProductPage: React.FC = () => {
                   {idx > 0 && (
                     <img
                       className="inline h-[10px] w-[20px] pl-[5px]"
-                      src="./src/assets/icons/arrow-down.svg"
+                      src="/assets/icons/arrow-down.svg"
                       alt="arrow"
                     />
                   )}
@@ -66,7 +70,7 @@ const ProductPage: React.FC = () => {
             ))}
           </ul>
         </nav>
-        <h1 className="lg:-mt-2 lg:text-[40px] lg:ml-[37px] font-light font-cormorant tracking-widest basis-1/3">
+        <h1 className="lg:-mt-2 lg:text-[40px] lg:ml-[37px] xl:mx-0 font-light font-cormorant tracking-widest">
           LIMARENKO
         </h1>
         <div className="hidden lg:flex gap-[37px]">
@@ -85,25 +89,37 @@ const ProductPage: React.FC = () => {
       </header>
       <main>
         <section className="lg:grid lg:grid-cols-[1fr_366px_366px] lg:mx-[50px] lg:-mt-[10px]">
-          <figure className="flex overflow-x-scroll gap-[10px] mx-[10px] lg:gap-[20px] lg:col-span-2 lg:col-start-2 lg:mr-0 lg:overflow-y-scroll lg:overflow-x-hidden lg:flex-col">
-            {firstGroup.map((image, idx) => (
-              <div key={idx} className="flex-shrink-0 w-fit">
-                <img src={image} alt="product" className="object-contain" />
-              </div>
-            ))}
-          </figure>
+          <div className="lg:col-span-2 lg:h-[915px] lg:overflow-y-scroll">
+            <figure className="flex overflow-x-scroll gap-[10px] mx-[10px] lg:gap-[20px] lg:mr-0 lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:max-h-max">
+              {firstGroup.map((image, idx) => (
+                <div key={idx} className="flex-shrink-0 w-fit">
+                  <img src={image} alt="product" className="object-contain" />
+                </div>
+              ))}
 
-          <figure className="hidden lg:grid lg:grid-cols-2 ml-[10px] mt-[20px] gap-[20px] lg:col-span-2 lg:col-start-2 min-w-fit">
-            {secondGroup.map((image, idx) => (
-              <div key={idx}>
-                <img
-                  src={image}
-                  alt={`product-${idx + 2}`}
-                  className="object-contain"
-                />
-              </div>
-            ))}
-          </figure>
+              {secondGroup.map((image, idx) => (
+                <div key={idx} className="flex-shrink-0 w-fit lg:hidden">
+                  <img
+                    src={image}
+                    alt={`product-${idx + 2}`}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </figure>
+
+            <figure className="hidden lg:grid lg:grid-cols-2 gap-[20px] ml-[10px] mt-[20px] min-w-fit">
+              {secondGroup.map((image, idx) => (
+                <div key={idx}>
+                  <img
+                    src={image}
+                    alt={`product-${idx + 2}`}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </figure>
+          </div>
           <section className="lg:hidden">
             {" "}
             {/* description mobile version */}
@@ -162,14 +178,14 @@ const ProductPage: React.FC = () => {
               )}
             </article>
           </section>
-          <section className="hidden lg:flex flex-col lg:row-start-1 mt-[50px]">
+          <section className="hidden lg:flex flex-col lg:row-start-1 mt-[50px] xl:max-w-[600px]">
             {" "}
             {/*description laptop version */}
             <div>
               <ul className="flex gap-[10px] font-onest font-light text-[16px]">
-                <li className="opacity-50">Головна</li>
+                <li className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"><a href="#main">Головна</a></li>
                 <li className="bg-black h-[1px] w-[20px] opacity-50 mt-3"></li>
-                <li className="opacity-50">Жилети</li>
+                <li className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"><a href="#main">Жилети</a></li>
                 <li className="bg-black h-[1px] w-[20px] opacity-50 mt-3"></li>
                 <li>Vest</li>
               </ul>
@@ -252,11 +268,12 @@ const ProductPage: React.FC = () => {
           <h2 className="mb-[10px] font-cormorant font-light text-[16px] lg:text-[32px]">
             Те що тобі сподобається
           </h2>
-          <figure className="flex overflow-x-scroll gap-[10px] h-[200px] lg:grid lg:grid-cols-3 lg:h-auto lg:gap-[20px] lg:overflow-y-hidden">
+          <figure className="flex overflow-x-scroll gap-[10px] h-[200px] lg:grid lg:grid-cols-3 lg:h-auto lg:gap-[20px] lg:overflow-y-hidden lg:justify-items-center ">
             {addProduct.map((item, index) => (
-              <div
+              <a
+                href="#"
                 key={index}
-                className="flex-shrink-0 w-[145px] h-[170px] lg:h-full lg:w-full lg:mt-[50px]"
+                className="flex-shrink-0 w-[145px] h-[170px] lg:h-full lg:max-w-max lg:w-full lg:mt-[50px] hover:scale-95 transition-all duration-300"
               >
                 <img
                   src={item.src}
@@ -267,7 +284,7 @@ const ProductPage: React.FC = () => {
                   <p>{item.name}</p>
                   <p>₴ {item.price}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </figure>
         </section>
